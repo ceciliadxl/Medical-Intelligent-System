@@ -1,0 +1,170 @@
+// 主样式文件
+:root {
+  --primary-color: #00d4ff;
+  --secondary-color: #0066ff;
+  --bg-dark: #0a1628;
+  --bg-card: rgba(10, 30, 60, 0.8);
+  --text-primary: #ffffff;
+  --text-secondary: #a0cfff;
+  --border-color: rgba(0, 212, 255, 0.3);
+  --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --gradient-cyan: linear-gradient(135deg, #00d4ff 0%, #0066ff 100%);
+}
+
+body {
+  background: var(--bg-dark);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+// 卡片样式
+.dashboard-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border-color);
+    
+    h3 {
+      font-size: 18px;
+      color: var(--primary-color);
+      margin: 0;
+    }
+  }
+}
+
+// 数字卡片样式
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 212, 255, 0.2);
+  }
+  
+  .stat-value {
+    font-size: 36px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+  }
+  
+  .stat-label {
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+}
+
+// 表格样式覆盖
+.el-table {
+  --el-table-bg-color: transparent;
+  --el-table-tr-bg-color: transparent;
+  --el-table-header-bg-color: rgba(0, 212, 255, 0.1);
+  --el-table-row-hover-bg-color: rgba(0, 212, 255, 0.05);
+  --el-table-border-color: rgba(0, 212, 255, 0.2);
+  --el-table-text-color: #e0e0e0;
+  --el-table-header-text-color: #00d4ff;
+}
+
+// 按钮样式
+.btn-primary {
+  background: var(--gradient-cyan) !important;
+  border: none !important;
+  color: #fff !important;
+  
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+}
+
+// 分页样式
+.el-pagination {
+  --el-pagination-bg-color: transparent;
+  --el-pagination-text-color: var(--text-secondary);
+  --el-pagination-button-bg-color: rgba(0, 212, 255, 0.1);
+  --el-pagination-hover-color: var(--primary-color);
+}
+
+// 页面标题
+.page-title {
+  font-size: 28px;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px 0;
+  background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.1), transparent);
+  
+  span {
+    background: var(--gradient-cyan);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+// 页面切换按钮
+.nav-buttons {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
+}
+
+// 动画
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(0, 212, 255, 0.6);
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+// 响应式
+@media (max-width: 768px) {
+  .stat-card {
+    padding: 16px;
+    
+    .stat-value {
+      font-size: 28px;
+    }
+  }
+  
+  .dashboard-card {
+    padding: 15px;
+  }
+}

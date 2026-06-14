@@ -1,0 +1,11 @@
+// Dashboard组件统一导出
+export { default as HeaderNav } from './HeaderNav.vue'
+export { default as CardContainer } from './CardContainer.vue'
+export { default as AgeDonutChart } from './AgeDonutChart.vue'
+export { default as DiseaseBarChart } from './DiseaseBarChart.vue'
+export { default as CaseTable } from './CaseTable.vue'
+export { default as InfoCards } from './InfoCards.vue'
+export { default as GenderCompare } from './GenderCompare.vue'
+export { default as HeightWeightChart } from './HeightWeightChart.vue'
+export { default as DeptChart } from './DeptChart.vue'
+export { default as KeywordCloud } from './KeywordCloud.vue'
